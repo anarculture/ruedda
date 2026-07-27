@@ -219,8 +219,8 @@
     padding:0 clamp(18px,2vw,32px);
   }
   .b1 .bar-f{background:rgba(232,99,42,.14);width:100%}
-  .b2 .bar-f{background:rgba(232,99,42,.34);width:82%;margin-left:auto}
-  .b3 .bar-f{background:linear-gradient(160deg,#f0722f,#d95517);width:58%;margin-left:auto;box-shadow:0 26px 80px -18px rgba(232,99,42,.45)}
+  .b2 .bar-f{background:rgba(232,99,42,.34);width:82%}
+  .b3 .bar-f{background:linear-gradient(160deg,#f0722f,#d95517);width:58%;box-shadow:0 26px 80px -18px rgba(232,99,42,.45)}
   .band .lbl{font-family:var(--fd);font-weight:600;font-size:clamp(14px,1.1vw,18px);color:#fff}
   .band .desc{font-size:clamp(12px,.9vw,14px);color:var(--muted);margin-top:3px}
   .b3 .desc{color:rgba(255,255,255,.85)}
@@ -513,13 +513,42 @@
           <div class="stat" data-el><div class="n num" data-to="47.8" data-suffix="%" data-dec="1">0</div><div class="l">net margin</div></div>
           <div class="stat" data-el><div class="n num" data-to="95.6" data-prefix="~" data-suffix="%" data-dec="1">0</div><div class="l">annualized return</div></div>
         </div>
-        <p class="note" data-el>Based on the ESCUDA catalog average list price of $1,408 over one 24-week cycle. Full per-lease ledger and cost stack available for due diligence.</p>
+        <p class="note" data-el>Based on the ESCUDA catalog average list price of $1,408 over one 24-week cycle. The full per-lease ledger follows.</p>
       </div>
     </div>
   </section>
 
   <!-- 11 -->
-  
+  <section class="scene" data-w="1.9">
+    <div class="wrap">
+      <p class="k" data-el>Unit economics</p>
+      <h2 data-el>What one average lease generates</h2>
+      <p class="lede" data-el>Based on the ESCUDA catalog average list price of $1,408, over one six-month, 24-week lease cycle.</p>
+      <div class="econ">
+        <div class="bignum" data-el>
+          <div class="cap">Net profit per unit</div>
+          <div class="v num"><span data-to="548.30" data-dec="2" data-prefix="$">$0</span></div>
+          <div class="u">per six-month lease cycle</div>
+          <div class="trio">
+            <div><span class="a num">47.8%</span><span class="b">Net margin</span></div>
+            <div><span class="a num">~95.6%</span><span class="b">Annualized return</span></div>
+            <div><span class="a num">$754</span><span class="b">Gross margin</span></div>
+          </div>
+        </div>
+        <table class="ledger" data-el>
+          <tr><td>List price (avg.)</td><td>$1,408.00</td></tr>
+          <tr><td>Initial payment (27.5%) &mdash; to dealer</td><td>$387.20</td></tr>
+          <tr><td>RUEDDA disburses to dealer (72.5%)</td><td>$1,020.80</td></tr>
+          <tr><td>Amount charged &mdash; 24 weekly canons</td><td>$1,775.30</td></tr>
+          <tr class="neg"><td>RUEDDA disbursement (recovered)</td><td>($1,020.80)</td></tr>
+          <tr class="neg"><td>GPS unit cost</td><td>($70.00)</td></tr>
+          <tr class="neg"><td>Insurance (4% of list price)</td><td>($56.32)</td></tr>
+          <tr class="neg"><td>App services (4% of amount charged)</td><td>($71.01)</td></tr>
+          <tr class="neg"><td>SPIDI (0.5% of amount charged)</td><td>($8.88)</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
 
   <!-- 12 -->
   <section class="scene" data-w="1.2">
@@ -669,7 +698,7 @@
   driver.style.height = (total * 100) + 'vh';
 
   /* canvas tonal drift per scene */
-  const tones = ['#1a222b','#202933','#1e2731','#1a222b','#232e3a','#151c24','#1e2731','#151c24','#1e2731','#141a21'];
+  const tones = ['#1a222b','#202933','#1e2731','#1a222b','#232e3a','#151c24','#1e2731','#151c24','#202933','#1e2731','#141a21'];
 
   /* ---- master timeline, scrubbed over the driver ---- */
   const tl = gsap.timeline({
