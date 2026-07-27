@@ -219,8 +219,8 @@
     padding:0 clamp(18px,2vw,32px);
   }
   .b1 .bar-f{background:rgba(232,99,42,.14);width:100%}
-  .b2 .bar-f{background:rgba(232,99,42,.34);width:82%}
-  .b3 .bar-f{background:linear-gradient(160deg,#f0722f,#d95517);width:58%;box-shadow:0 26px 80px -18px rgba(232,99,42,.45)}
+  .b2 .bar-f{background:rgba(232,99,42,.34);width:82%;margin-inline:auto}
+  .b3 .bar-f{background:linear-gradient(160deg,#f0722f,#d95517);width:58%;margin-inline:auto;box-shadow:0 26px 80px -18px rgba(232,99,42,.45)}
   .band .lbl{font-family:var(--fd);font-weight:600;font-size:clamp(14px,1.1vw,18px);color:#fff}
   .band .desc{font-size:clamp(12px,.9vw,14px);color:var(--muted);margin-top:3px}
   .b3 .desc{color:rgba(255,255,255,.85)}
@@ -509,9 +509,9 @@
       </div>
       <div style="max-width:1240px;margin:0 auto">
         <div class="stats">
-          <div class="stat" data-el><div class="n num" data-to="548.30" data-dec="2" data-prefix="$">$0</div><div class="l">net profit per unit, per six-month cycle</div></div>
-          <div class="stat" data-el><div class="n num" data-to="47.8" data-suffix="%" data-dec="1">0</div><div class="l">net margin</div></div>
-          <div class="stat" data-el><div class="n num" data-to="95.6" data-prefix="~" data-suffix="%" data-dec="1">0</div><div class="l">annualized return</div></div>
+          <div class="stat" data-el><div class="n num" data-to="541.25" data-dec="2" data-prefix="$">$0</div><div class="l">net profit per unit, per six-month cycle</div></div>
+          <div class="stat" data-el><div class="n num" data-to="46.9" data-suffix="%" data-dec="1">0</div><div class="l">return on invested capital</div></div>
+          <div class="stat" data-el><div class="n num" data-to="93.8" data-prefix="~" data-suffix="%" data-dec="1">0</div><div class="l">annualized return</div></div>
         </div>
         <p class="note" data-el>Based on the ESCUDA catalog average list price of $1,408 over one 24-week cycle. The full per-lease ledger follows.</p>
       </div>
@@ -527,11 +527,11 @@
       <div class="econ">
         <div class="bignum" data-el>
           <div class="cap">Net profit per unit</div>
-          <div class="v num"><span data-to="548.30" data-dec="2" data-prefix="$">$0</span></div>
+          <div class="v num"><span data-to="541.25" data-dec="2" data-prefix="$">$0</span></div>
           <div class="u">per six-month lease cycle</div>
           <div class="trio">
-            <div><span class="a num">47.8%</span><span class="b">Net margin</span></div>
-            <div><span class="a num">~95.6%</span><span class="b">Annualized return</span></div>
+            <div><span class="a num">46.9%</span><span class="b">Return on invested capital</span></div>
+            <div><span class="a num">~93.8%</span><span class="b">Annualized return</span></div>
             <div><span class="a num">$754</span><span class="b">Gross margin</span></div>
           </div>
         </div>
@@ -543,6 +543,7 @@
           <tr class="neg"><td>RUEDDA disbursement (recovered)</td><td>($1,020.80)</td></tr>
           <tr class="neg"><td>GPS unit cost</td><td>($70.00)</td></tr>
           <tr class="neg"><td>Insurance (4% of list price)</td><td>($56.32)</td></tr>
+          <tr class="neg"><td>Sales commission (0.5% of list price)</td><td>($7.04)</td></tr>
           <tr class="neg"><td>App services (4% of amount charged)</td><td>($71.01)</td></tr>
           <tr class="neg"><td>SPIDI (0.5% of amount charged)</td><td>($8.88)</td></tr>
         </table>
