@@ -117,6 +117,23 @@ h1 .star{color:var(--orange)}
 @media (max-width:1000px){.feats{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.feats{grid-template-columns:1fr;gap:var(--s4)}}
 
+/* Dónde encontrarnos — red de concesionarios, resuelta en tipografía */
+.donde-grid{display:grid;grid-template-columns:5fr 7fr;gap:var(--s6);align-items:center}
+.donde-ph{margin:0 0 0 .8rem}
+.donde-ph img{border-radius:.4rem;box-shadow:-.8rem .8rem 0 var(--navy)}
+.donde-intro{color:var(--ink-2);max-width:44ch;margin-bottom:var(--s5)}
+.dealers{list-style:none;margin:0 0 var(--s5);padding:0}
+.dealers li{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s3);border-top:1px solid var(--line);padding:var(--s3) 0}
+.dealers li:last-child{border-bottom:1px solid var(--line)}
+.dealers b{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,2.6vw,2.1rem);letter-spacing:-.01em}
+.dealers span{color:var(--ink-2);white-space:nowrap}
+.cities{font-family:var(--display);font-weight:600;font-size:1.05rem;line-height:1.9}
+.cities span{color:var(--orange);padding:0 .35rem}
+@media (max-width:860px){
+  .donde-grid{grid-template-columns:1fr;gap:var(--s5)}
+  .donde-ph{order:2;margin:0 0 0 .8rem}
+}
+
 /* El problema — banda navy, una sola afirmación */
 #s-problema{background:var(--navy);color:var(--paper)}
 .prob{font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.45;max-width:36ch}
@@ -226,8 +243,30 @@ h1 .star{color:var(--orange)}
      ESCUDA · Empire Keeway · Veloz. Ciudades: Caracas, La Guaira,
      Los Teques, La Victoria, Maracay, Valencia. Nunca qué moto.            -->
 <section id="s-donde">
-  <h2>Dónde encontrarnos</h2>
-  <!-- TODO(S5) -->
+  <div class="wrap donde-grid">
+    <figure class="donde-ph">
+      <img src="https://images.unsplash.com/photo-1762379972568-baa79754aca8?q=75&amp;w=800&amp;h=1000&amp;auto=format&amp;fit=crop"
+           width="800" height="1000" loading="lazy"
+           alt="Moto subiendo una calle empinada entre casas de colores">
+    </figure>
+    <div>
+      <h2>Dónde encontrarnos</h2>
+      <p class="donde-intro">RUEDDA no tiene tienda física: aplicas desde la app
+        y procesas tu arrendamiento en el concesionario aliado que prefieras.</p>
+      <ul class="dealers">
+        <li><b>ESCUDA</b><span>7 sucursales</span></li>
+        <li><b>Empire Keeway</b><span>2 sucursales</span></li>
+        <li><b>Veloz</b><span>1 sucursal</span></li>
+      </ul>
+      <p class="cities" aria-label="Ciudades cubiertas">
+        Caracas <span aria-hidden="true">*</span> La Guaira
+        <span aria-hidden="true">*</span> Los Teques
+        <span aria-hidden="true">*</span> La Victoria
+        <span aria-hidden="true">*</span> Maracay
+        <span aria-hidden="true">*</span> Valencia
+      </p>
+    </div>
+  </div>
 </section>
 
 <!-- ═══ 6 · Testimonios — OMITIDA a propósito ══════════════════════════════
