@@ -151,6 +151,26 @@ h1 .star{color:var(--orange)}
 .prob{font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.45;max-width:36ch}
 .prob .hl{color:var(--orange);font-weight:600}
 
+/* CTA final — la página entera desemboca en la banda naranja */
+#s-cta{background:var(--orange);color:var(--ink);position:relative;overflow:hidden}
+#s-cta::after{content:"";position:absolute;right:-5rem;top:50%;translate:0 -50%;width:22rem;height:22rem;background:var(--logo-asterisk) center/contain no-repeat;opacity:.4}
+#s-cta .wrap{position:relative;z-index:1}
+#s-cta h2{margin-bottom:var(--s3)}
+.cta-note{max-width:44ch;margin-bottom:var(--s5)}
+
+/* Footer — navy, contacto y legales */
+#s-footer{background:var(--navy);color:var(--paper)}
+.foot-grid{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--s4) var(--s6)}
+.foot-brand{font-family:var(--display);font-weight:700;font-size:1.5rem;letter-spacing:-.01em}
+.foot-brand .star{color:var(--orange)}
+.foot-links{display:flex;flex-wrap:wrap;gap:var(--s3) var(--s4)}
+.foot-links a{color:var(--paper);text-decoration:underline;text-underline-offset:.2em}
+.foot-links a:hover{color:var(--orange)}
+.foot-links a:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.foot-links a[aria-disabled="true"]{color:#c6cdd4;text-decoration-style:dashed}
+.fine{color:#c6cdd4;font-size:var(--t-small);margin-left:auto}
+@media (max-width:560px){.fine{margin-left:0}}
+
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
@@ -352,13 +372,36 @@ h1 .star{color:var(--orange)}
 <!-- ═══ 8 · CTA Final + Footer ═════════════════════════════════════════════
      Repetir badges de descarga · info@somosruedda.com · legales placeholder -->
 <section id="s-cta">
-  <h2>Descarga RUEDDA</h2>
-  <!-- TODO(S7) -->
+  <div class="wrap">
+    <h2>Descarga RUEDDA</h2>
+    <p class="cta-note">La solicitud completa se hace desde la app: regístrate,
+      te aprueban y retiras tu moto en el concesionario aliado.</p>
+    <div class="stores">
+      <a class="store" data-store="ios" href="#" aria-disabled="true">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 12.9c0-2 1.6-3 1.7-3.1-1-1.4-2.4-1.6-2.9-1.6-1.2-.1-2.4.7-3 .7-.6 0-1.6-.7-2.6-.7-1.3 0-2.6.8-3.3 2-1.4 2.5-.4 6.1 1 8.1.7 1 1.5 2.1 2.5 2 1 0 1.4-.6 2.6-.6s1.6.6 2.6.6c1.1 0 1.8-1 2.4-2 .8-1.1 1.1-2.2 1.1-2.3 0 0-2.1-.8-2.1-3.1zM14.6 6.9c.5-.7.9-1.6.8-2.6-.8 0-1.8.6-2.3 1.2-.5.6-1 1.6-.8 2.5.9.1 1.8-.4 2.3-1.1z"/></svg>
+        <span><i>Descárgala en el</i><b>App Store</b></span>
+      </a>
+      <a class="store" data-store="android" href="#" aria-disabled="true">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3.6v16.8c0 .4.4.7.8.5l9.6-5.4-2.7-2.7L5 3.6zM14 11.6l2.8-2.8-10.3-5.8c-.2-.1-.4-.1-.6 0L14 11.6zM17.9 9.4 15 12.3l2.9 2.9 2.6-1.5c.7-.4.7-1.4 0-1.8l-2.6-1.5zM5.9 21l10.2-5.8-2.7-2.7L5.9 21z"/></svg>
+        <span><i>Disponible en</i><b>Google Play</b></span>
+      </a>
+    </div>
+  </div>
 </section>
 
 <footer id="s-footer">
-  <!-- TODO(S7): contacto, RIF (pendiente que lo entregue el cliente),
-       enlaces legales como TODO visible hasta que existan los documentos. -->
+  <!-- TODO: RIF pendiente de RUEDDA -->
+  <!-- TODO: teléfono / WhatsApp de soporte pendientes — el cliente no los entregó -->
+  <div class="wrap foot-grid">
+    <p class="foot-brand" aria-hidden="true">RUEDDA<span class="star">*</span></p>
+    <nav class="foot-links" aria-label="Contacto y legales">
+      <a href="mailto:info@somosruedda.com">info@somosruedda.com</a>
+      <!-- TODO: enlazar términos y privacidad cuando existan los documentos -->
+      <a href="#" aria-disabled="true">Términos y condiciones (pronto)</a>
+      <a href="#" aria-disabled="true">Política de privacidad (pronto)</a>
+    </nav>
+    <p class="fine">© 2026 RUEDDA</p>
+  </div>
 </footer>
 
 </body>
