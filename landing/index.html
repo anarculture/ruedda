@@ -97,6 +97,16 @@ h1 .star{color:var(--orange)}
   .hero-ph{margin-right:.8rem}
 }
 
+/* Cómo funciona — cinco pasos, numerales gigantes en naranja */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:var(--s4);counter-reset:paso}
+.steps li{counter-increment:paso;border-top:3px solid var(--ink);padding-top:var(--s3);font-family:var(--display);font-weight:600;font-size:1.15rem;line-height:1.3;text-wrap:balance}
+.steps li::before{content:counter(paso);display:block;font-size:clamp(2.5rem,4vw,3.5rem);font-weight:700;color:var(--orange);line-height:1;margin-bottom:var(--s2)}
+@media (max-width:860px){
+  .steps{grid-template-columns:1fr;gap:var(--s3)}
+  .steps li{display:grid;grid-template-columns:3.2rem 1fr;align-items:baseline;column-gap:var(--s3);padding-top:var(--s2)}
+  .steps li::before{font-size:2.2rem;margin:0}
+}
+
 /* El problema — banda navy, una sola afirmación */
 #s-problema{background:var(--navy);color:var(--paper)}
 .prob{font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.45;max-width:36ch}
@@ -158,11 +168,17 @@ h1 .star{color:var(--orange)}
 <!-- ═══ 3 · Cómo Funciona ══════════════════════════════════════════════════
      5 pasos numerados. Sin precios, sin catálogo.                          -->
 <section id="s-como">
-  <h2>Cómo funciona</h2>
-  <ol>
-    <!-- TODO(S3): 1 Regístrate en la app · 2 Te aprueban · 3 Pagas la inicial
-         · 4 Te entregan tu moto · 5 Paga tus cánones por 6 meses y es tuya -->
-  </ol>
+  <div class="wrap">
+    <h2>Cómo funciona</h2>
+    <!-- Texto literal del cliente (BUILD.md Apéndice A) — no editar -->
+    <ol class="steps">
+      <li>Regístrate en la App</li>
+      <li>Te aprueban</li>
+      <li>Pagas la inicial</li>
+      <li>Te entregan tu moto</li>
+      <li>Paga tus cánones por 6 meses — y es tuya</li>
+    </ol>
+  </div>
 </section>
 
 <!-- ═══ 4 · Por Qué RUEDDA ═════════════════════════════════════════════════
