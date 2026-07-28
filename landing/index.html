@@ -107,6 +107,16 @@ h1 .star{color:var(--orange)}
   .steps li::before{font-size:2.2rem;margin:0}
 }
 
+/* Por qué RUEDDA — cuatro diferenciadores sobre tinta clara, sin tarjetas */
+#s-porque{background:var(--tint)}
+.feats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s5) var(--s4)}
+.feats [data-feature]{border-top:3px solid var(--ink);padding-top:var(--s4)}
+.feats svg{width:2.1rem;height:2.1rem;color:var(--orange);margin-bottom:var(--s3)}
+.feats h3{margin-bottom:var(--s2)}
+.feats p{color:var(--ink-2);font-size:.98rem}
+@media (max-width:1000px){.feats{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.feats{grid-template-columns:1fr;gap:var(--s4)}}
+
 /* El problema — banda navy, una sola afirmación */
 #s-problema{background:var(--navy);color:var(--paper)}
 .prob{font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.45;max-width:36ch}
@@ -185,8 +195,31 @@ h1 .star{color:var(--orange)}
      Basado en íconos. Aprobación instantánea · inicial accesible ·
      seguro incluido · cánones en Bs a tasa BCV.                            -->
 <section id="s-porque">
-  <h2>Por qué RUEDDA</h2>
-  <!-- TODO(S4) -->
+  <div class="wrap">
+    <h2>Por qué RUEDDA</h2>
+    <div class="feats">
+      <div data-feature>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 5 13h5l-1 9 8-11h-5l1-9z"/></svg>
+        <h3>Aprobación instantánea</h3>
+        <p>Respuesta a tu solicitud en menos de un minuto, desde la app.</p>
+      </div>
+      <div data-feature>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        <h3>Inicial accesible</h3>
+        <p>Pagas tu inicial en el concesionario aliado y te llevas la moto ese mismo día.</p>
+      </div>
+      <div data-feature>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        <h3>Seguro incluido</h3>
+        <p>Todas las motos arrendadas con RUEDDA tienen cobertura mientras dure el contrato.</p>
+      </div>
+      <div data-feature>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><polyline points="9.5 11.5 11.5 13.5 14.5 9.5"/><line x1="11" y1="18.5" x2="13" y2="18.5"/></svg>
+        <h3>Cánones en Bs a tasa BCV</h3>
+        <p>Pagas desde la app, en bolívares, a la tasa oficial del Banco Central de Venezuela.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ═══ 5 · Dónde Encontrarnos ═════════════════════════════════════════════
