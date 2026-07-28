@@ -70,8 +70,16 @@ p{margin:0}
 section,footer{padding:var(--s7) var(--s4)}
 .wrap{max-width:var(--col);margin:0 auto}
 
-/* Asterisco de marca como ornamento recurrente */
-.ast{display:inline-block;width:1em;height:1em;background:var(--logo-asterisk) center/contain no-repeat;vertical-align:-.08em}
+/* Un solo momento de motion: cada banda sube un pelo al entrar.
+   Solo Chrome moderno (view timeline); reduced-motion lo apaga. */
+@supports (animation-timeline: view()){
+  section:not(#s-hero) .wrap{
+    animation:rise linear both;
+    animation-timeline:view();
+    animation-range:entry 0% entry 60%;
+  }
+  @keyframes rise{from{opacity:.2;translate:0 14px}to{opacity:1;translate:0 0}}
+}
 
 /* Header — wordmark sobre paper, siempre */
 .top{padding:var(--s4);border-bottom:1px solid var(--line)}
@@ -148,12 +156,19 @@ h1 .star{color:var(--orange)}
 
 /* El problema — banda navy, una sola afirmación */
 #s-problema{background:var(--navy);color:var(--paper)}
-.prob{font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.45;max-width:36ch}
+.prob{font-size:clamp(1.3rem,2.4vw,1.85rem);line-height:1.45;max-width:36ch}
 .prob .hl{color:var(--orange);font-weight:600}
+@media (min-width:861px){
+  .prob-grid{display:grid;grid-template-columns:5fr 7fr;gap:var(--s5);align-items:start}
+  .prob-grid h2{margin-bottom:0}
+}
 
 /* CTA final — la página entera desemboca en la banda naranja */
 #s-cta{background:var(--orange);color:var(--ink);position:relative;overflow:hidden}
 #s-cta::after{content:"";position:absolute;right:-5rem;top:50%;translate:0 -50%;width:22rem;height:22rem;background:var(--logo-asterisk) center/contain no-repeat;opacity:.4}
+@media (max-width:860px){
+  #s-cta::after{width:12rem;height:12rem;right:-3.5rem;top:auto;bottom:-3.5rem;translate:0 0;opacity:.3}
+}
 #s-cta .wrap{position:relative;z-index:1}
 #s-cta h2{margin-bottom:var(--s3)}
 .cta-note{max-width:44ch;margin-bottom:var(--s5)}
@@ -216,7 +231,7 @@ h1 .star{color:var(--orange)}
 <!-- ═══ 2 · El Problema ════════════════════════════════════════════════════
      Una o dos líneas. Sin crédito bancario, sin historial formal. Corto.   -->
 <section id="s-problema">
-  <div class="wrap">
+  <div class="wrap prob-grid">
     <h2>El problema</h2>
     <p class="prob">Financiar una moto en Venezuela hoy no funciona: sin
       historial formal, la banca no te ve. La moto es tu herramienta de
