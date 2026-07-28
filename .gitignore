@@ -2,3 +2,6 @@
 *
 !index.html
 !.gitignore
+# el landing publico: solo el archivo servible, el README queda local
+!landing/
+!landing/index.html
