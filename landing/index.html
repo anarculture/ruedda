@@ -134,6 +134,18 @@ h1 .star{color:var(--orange)}
   .donde-ph{order:2;margin:0 0 0 .8rem}
 }
 
+/* FAQ — <details> nativo, cero JS */
+#s-faq{background:var(--tint)}
+.faq-wrap{max-width:46rem}
+#s-faq details{border-top:1px solid var(--line)}
+#s-faq details:last-of-type{border-bottom:1px solid var(--line)}
+#s-faq summary{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s3);cursor:pointer;list-style:none;padding:var(--s3) 0;font-family:var(--display);font-weight:600;font-size:1.12rem}
+#s-faq summary::-webkit-details-marker{display:none}
+#s-faq summary::after{content:"+";flex:none;color:var(--orange);font-size:1.4rem;line-height:1;transition:rotate .18s ease-out}
+#s-faq details[open] summary::after{rotate:45deg}
+#s-faq summary:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+#s-faq details p{color:var(--ink-2);padding:0 0 var(--s4);max-width:60ch}
+
 /* El problema — banda navy, una sola afirmación */
 #s-problema{background:var(--navy);color:var(--paper)}
 .prob{font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.45;max-width:36ch}
@@ -276,8 +288,65 @@ h1 .star{color:var(--orange)}
 <!-- ═══ 7 · Preguntas Frecuentes ═══════════════════════════════════════════
      Las 10 preguntas que envió el cliente, textuales. <details>/<summary>. -->
 <section id="s-faq">
-  <h2>Preguntas frecuentes</h2>
-  <!-- TODO(S6) -->
+  <div class="wrap faq-wrap">
+    <h2>Preguntas frecuentes</h2>
+    <!-- Texto literal del cliente (BUILD.md Apéndice A) — no editar, ni ortografía -->
+    <details>
+      <summary>¿Cómo puedo contactarlos?</summary>
+      <p>En la sección de Soporte encontrarás nuestro número de contacto y
+        nuestro WhatsApp para atención directa.</p>
+    </details>
+    <details>
+      <summary>¿Dónde realizo mi solicitud de arrendamiento?</summary>
+      <p>Toda la solicitud se realiza desde nuestra aplicación, disponible en
+        App Store (iOS) y Google Play (Android).</p>
+    </details>
+    <details>
+      <summary>¿Cómo funciona RUEDDA?</summary>
+      <p>Funcionamos bajo un modelo de arrendamiento de motos: pagas tu inicial
+        en el concesionario aliado y te llevas la moto ese mismo día. Luego
+        completas el pago de tus cánones según el plan que elijas.</p>
+    </details>
+    <details>
+      <summary>¿Qué documentos necesito para aplicar?</summary>
+      <p>Necesitas tu cédula de identidad vigente, RIF, Licencia, Certificado
+        Medico y dos referencias personales. Todo el proceso lo completas desde
+        la app.</p>
+    </details>
+    <details>
+      <summary>¿Cuánto tiempo tardan en responder mi solicitud?</summary>
+      <p>Gracias a nuestro sistema de análisis de perfiles, la respuesta a tu
+        solicitud es inmediata una vez completes los requisitos en la
+        aplicación.</p>
+    </details>
+    <details>
+      <summary>¿Dónde arriendo mi moto?</summary>
+      <p>RUEDDA no cuenta con tienda física — somos una aplicación que te
+        conecta con concesionarios aliados. Aplicas desde la app y procesas tu
+        arrendamiento directamente en el concesionario de tu preferencia.</p>
+    </details>
+    <details>
+      <summary>¿Cómo pago mis cánones?</summary>
+      <p>Todos tus cánones los pagas a través de la App, y si, en Bs a la tasa
+        oficial del Banco Central de Venezuela.</p>
+    </details>
+    <details>
+      <summary>¿Qué pasa cuando termino de pagar mis cánones?</summary>
+      <p>La moto puede pasar a ser tuya. Solo debes realizar el traspaso de
+        propiedad, cubriendo los gastos de notaría correspondientes.</p>
+    </details>
+    <details>
+      <summary>¿Qué pasa si me atraso en un pago?</summary>
+      <p>Cuentas con un período de gracia. Pasado ese tiempo, se aplica una
+        penalidad sobre el cánon vencido. Puedes revisar las condiciones
+        exactas de tu contrato directamente en la app.</p>
+    </details>
+    <details>
+      <summary>¿Mi moto tiene seguro?</summary>
+      <p>Sí. Todas las motos arrendadas con RUEDDA cuentan con cobertura de
+        seguro mientras dure tu contrato.</p>
+    </details>
+  </div>
 </section>
 
 <!-- ═══ 8 · CTA Final + Footer ═════════════════════════════════════════════
