@@ -97,6 +97,11 @@ h1 .star{color:var(--orange)}
   .hero-ph{margin-right:.8rem}
 }
 
+/* El problema — banda navy, una sola afirmación */
+#s-problema{background:var(--navy);color:var(--paper)}
+.prob{font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.45;max-width:36ch}
+.prob .hl{color:var(--orange);font-weight:600}
+
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
@@ -142,8 +147,12 @@ h1 .star{color:var(--orange)}
 <!-- ═══ 2 · El Problema ════════════════════════════════════════════════════
      Una o dos líneas. Sin crédito bancario, sin historial formal. Corto.   -->
 <section id="s-problema">
-  <h2>El problema</h2>
-  <!-- TODO(S2) -->
+  <div class="wrap">
+    <h2>El problema</h2>
+    <p class="prob">Financiar una moto en Venezuela hoy no funciona: sin
+      historial formal, la banca no te ve. La moto es tu herramienta de
+      trabajo <strong class="hl">— y nadie la financia.</strong></p>
+  </div>
 </section>
 
 <!-- ═══ 3 · Cómo Funciona ══════════════════════════════════════════════════
