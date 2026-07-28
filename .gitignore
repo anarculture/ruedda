@@ -1,7 +1,8 @@
-# repo publico: solo el deck servible; material interno queda local
+# repo publico: solo lo servible; material interno queda local
 *
-!index.html
 !.gitignore
-# el landing publico: solo el archivo servible, el README queda local
-!landing/
-!landing/index.html
+# la home: el landing publico
+!index.html
+# el deck de inversionistas, en su propia ruta
+!pitch-deck/
+!pitch-deck/index.html
