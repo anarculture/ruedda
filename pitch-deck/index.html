@@ -271,9 +271,6 @@
   .rollout .arw{color:var(--orange);margin:0 9px}
   .rollout .num{color:var(--txt)}
 
-  .team{display:flex;flex-wrap:wrap;gap:clamp(30px,5.6vw,92px);margin-top:clamp(30px,5.5vh,58px)}
-  .member .ini{font-family:var(--fd);font-weight:700;font-size:clamp(26px,3vw,46px);color:var(--orange);letter-spacing:-.02em;line-height:1}
-  .member .role{font-weight:500;font-size:clamp(13px,.95vw,15.5px);color:var(--muted);margin-top:8px}
 
   #s-close{text-align:center}
   #s-close .wrap{max-width:1000px}
@@ -334,8 +331,6 @@
     .trio{flex-wrap:wrap;gap:18px 28px}
     .close-facts{flex-direction:column;gap:18px;align-items:stretch}
     .close-facts div{max-width:none;font-size:14px}
-    .team{gap:26px 38px}
-    .member .role{font-size:13.5px}
     .chart{gap:10px}
     .bar b{font-size:10px;top:-20px}
     .hint{display:none}
@@ -552,22 +547,6 @@
   </section>
 
   <!-- 12 -->
-  <section class="scene" data-w="1.2">
-    <div class="wrap">
-      <p class="k" data-el>Team</p>
-      <h2 data-el>Leadership</h2>
-      <div class="team">
-        <div class="member" data-el><div class="ini">TS</div><div class="role">Chief Executive Officer</div></div>
-        <div class="member" data-el><div class="ini">NT</div><div class="role">Chief Financial Officer</div></div>
-        <div class="member" data-el><div class="ini">CMB</div><div class="role">Director</div></div>
-        <div class="member" data-el><div class="ini">DMB</div><div class="role">Director</div></div>
-        <div class="member" data-el><div class="ini">DD</div><div class="role">Director</div></div>
-      </div>
-      <p class="note" data-el>Full bios, backgrounds, and relevant prior experience for each team member to be added. This section should speak directly to why this team is positioned to win in motorcycle leasing specifically.</p>
-    </div>
-  </section>
-
-  <!-- 13 -->
   <section class="scene" id="s-close" data-w="1.8">
     <div class="wrap">
       <h1 data-el style="max-width:20ch;margin-inline:auto;font-size:clamp(28px,4.2vw,66px)">Let's build the leasing infrastructure for Venezuela's <span class="accent">two-wheel economy</span></h1>
@@ -699,7 +678,7 @@
   driver.style.height = (total * 100) + 'vh';
 
   /* canvas tonal drift per scene */
-  const tones = ['#1a222b','#202933','#1e2731','#1a222b','#232e3a','#151c24','#1e2731','#151c24','#202933','#1e2731','#141a21'];
+  const tones = ['#1a222b','#202933','#1e2731','#1a222b','#232e3a','#151c24','#1e2731','#151c24','#202933','#141a21'];
 
   /* ---- master timeline, scrubbed over the driver ---- */
   const tl = gsap.timeline({
