@@ -4,7 +4,8 @@
   THESIS: la página es un mostrador, no un folleto. Rechaza el hero de fintech
   con captura de app flotando: acá la prueba es física y numérica.
   OWN-WORLD: navy del deck en escalones (#141a21 a #232e3a), un solo naranja
-  #e8632a, Clash Display sobre Geist, cifras en Geist Mono, hairlines de 1px,
+  #e8632a, Montserrat del manual de marca con Designer en los rótulos en
+  mayúsculas y en las cifras, hairlines de 1px,
   asterisco de marca a gran escala recortado por el borde. Sin sombras, sin
   glass, sin segundo acento.
   STORY: el motorizado entiende que el banco no es el camino, ve el
@@ -21,7 +22,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RUEDDA · v5 + animate + rediseño</title>
+<title>RUEDDA · Movilidad a tu Alcance</title>
 <meta name="description" content="Arrienda tu moto desde la app RUEDDA. Respuesta en menos de un minuto, seguro incluido y cánones en Bs a tasa BCV.">
 
 <!-- Vista previa al compartir. Este link se pega en WhatsApp, no se busca en
@@ -31,13 +32,13 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_VE">
 <meta property="og:site_name" content="RUEDDA">
-<meta property="og:title" content="Tu moto de trabajo, sin banco.">
-<meta property="og:description" content="Aplica desde la app, te responden en menos de un minuto y retiras tu moto el mismo día. 10 sucursales aliadas en 6 ciudades.">
+<meta property="og:title" content="RUEDDA · Movilidad a tu Alcance">
+<meta property="og:description" content="Aplica desde la app, te responden en menos de un minuto y retiras tu moto el mismo día.">
 <meta property="og:url" content="https://anarculture.github.io/ruedda/">
 <meta property="og:image" content="https://anarculture.github.io/ruedda/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="RUEDDA — Tu moto de trabajo, sin banco. Menos de un minuto en responder, 10 sucursales aliadas, 6 ciudades cubiertas, seguro incluido.">
+<meta property="og:image:alt" content="RUEDDA — Movilidad a tu Alcance. Menos de un minuto en responder tu solicitud, seguro incluido.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1a222b">
 
@@ -48,19 +49,29 @@
      pantalla en vez de tenerlos ocultos desde el arranque. Firefox pinta antes
      y el efecto se ve; Chrome lo tapaba por milisegundos. -->
 <script>document.documentElement.classList.add('js')</script>
-<link rel="preconnect" href="https://api.fontshare.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
 <style>
+/* Designer Regular, la tipografía principal del manual de marca. Va inline
+   porque no está en ningún CDN: es el subset de 45 glifos que venía embebido
+   en el PDF del manual, más un espacio que ese subset no traía. Solo cubre
+   A-Z, dígitos, ! y ?, así que se usa únicamente en los rótulos en
+   mayúsculas (--fm). Cualquier tilde cae a Montserrat. */
+@font-face{font-family:'Designer'; font-style:normal; font-weight:400; font-display:swap;
+  src:url(data:font/woff2;base64,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) format('woff2')}
 :root{
   --ink-900:#141a21; --ink-800:#1a222b; --ink-700:#202933; --ink-600:#232e3a;
   --orange:#e8632a; --orange-deep:#c9501d;
   --txt:#eef1f4; --muted:#93a0ac; --muted-2:#8b98a4;
   --hair:rgba(255,255,255,.12);
-  --fd:'Clash Display','Geist',system-ui,sans-serif;
-  --fb:'Geist',system-ui,sans-serif;
-  --fm:'Geist Mono',ui-monospace,monospace;
+  --fd:'Montserrat',system-ui,sans-serif;
+  --fb:'Montserrat',system-ui,sans-serif;
+  --fm:'Montserrat',system-ui,sans-serif;
+  /* Designer solo aquí: rótulos que son mayúsculas ASCII o cifras puras. El
+     subset del manual no tiene tildes ni minúsculas, y el navegador sustituye
+     glifo por glifo, así que una sola tilde parte la palabra en dos fuentes.
+     test-landing-fonts.py falla si algún texto en --fz deja de ser dibujable. */
+  --fz:'Designer','Montserrat',system-ui,sans-serif;
   --t-label:.75rem; --t-label-sm:.625rem; --t-body-sm:.9375rem;
   --t-metric:clamp(1.375rem,3.4vw,2rem);
   --t-subhead:clamp(1.125rem,2vw,1.5rem); --t-subhead-sm:clamp(1rem,1.6vw,1.1875rem);
@@ -90,7 +101,7 @@ a{color:inherit}
 @media(min-width:768px){ .wrap{width:min(100% - 2*var(--lg), var(--wrap))} }
 
 .eyebrow{
-  font-family:var(--fm); font-size:.75rem; font-weight:500;
+  font-family:var(--fz); font-size:.75rem; font-weight:500;
   letter-spacing:.14em; text-transform:uppercase; color:var(--orange); margin:0;
 }
 
@@ -124,10 +135,14 @@ a{color:inherit}
 .hero{position:relative; padding-block:var(--md) var(--lg); overflow:hidden}
 @media(min-width:768px){ .hero{padding-block:var(--lg) var(--xl)} }
 .hero-grid{position:relative; z-index:1}
+/* El titular va en Designer, la principal del manual de marca. Como la fuente
+   no tiene minúsculas, el titular va en mayúsculas por fuerza, no por estilo.
+   El tracking de la rampa es negativo y está calculado para Montserrat; una
+   display ancha en caja alta necesita lo contrario, así que se anula. */
 h1{
-  font-family:var(--fd); font-weight:600;
-  font-size:var(--t-display); line-height:.94; letter-spacing:var(--tr-display);
-  margin:var(--md) 0 var(--sm); max-width:13ch; text-wrap:balance;
+  font-family:var(--fz); font-weight:400; text-transform:uppercase;
+  font-size:var(--t-display); line-height:1; letter-spacing:.005em;
+  margin:var(--md) 0 var(--sm); max-width:16ch; text-wrap:balance;
 }
 .lead{color:var(--muted); max-width:42ch; margin:var(--md) 0 0}
 .actions{margin-top:var(--xl)}
@@ -164,18 +179,6 @@ h1{
 
 /* ---------- badges de tienda ---------- */
 .badges{display:flex; flex-wrap:wrap; gap:var(--sm); padding:0; margin:0; list-style:none}
-@media(max-width:480px){
-  .badges{flex-wrap:nowrap; gap:8px}
-  .badges li{flex:1 1 0}
-  .badge{padding:10px; gap:7px}
-  .badge svg{width:18px; height:18px}
-  .badge span{letter-spacing:.08em}
-}
-/* ponytail: bajo 375px los dos badges no caben en fila ni comprimidos; apilan */
-@media(max-width:374px){
-  .badges{flex-wrap:wrap}
-  .badges li{flex:1 1 100%}
-}
 .badge{
   display:inline-flex; align-items:center; gap:10px;
   background:var(--ink-900); color:var(--txt); text-decoration:none;
@@ -194,6 +197,25 @@ h1{
 .badge b{display:block; white-space:nowrap; font-family:var(--fb); font-size:var(--t-body-sm); font-weight:500; line-height:1.15}
 .badge span{display:block; white-space:nowrap; font-family:var(--fm); font-size:var(--t-label-sm); letter-spacing:.12em;
   text-transform:uppercase; color:var(--muted-2)}
+/* Estas dos consultas van DESPUÉS de las reglas base a propósito: tienen la
+   misma especificidad, así que puestas antes las pisaba el `.badge` de arriba
+   y la compactación móvil nunca llegaba a aplicarse. */
+@media(max-width:480px){
+  .badges{flex-wrap:nowrap; gap:8px}
+  .badges li{flex:1 1 0}
+  .badge{padding:10px; gap:7px}
+  .badge svg{width:18px; height:18px}
+  .badge span{letter-spacing:.08em}
+  /* Montserrat corre más ancha que la Geist que había antes y "GOOGLE PLAY"
+     se salía del viewport a 390px. Baja un escalón de la rampa, de body-sm a
+     label, y vuelve a entrar sin tocar el breakpoint de apilado. */
+  .badge b{font-size:var(--t-label); letter-spacing:-.01em}
+}
+/* ponytail: bajo 375px los dos badges no caben en fila ni comprimidos; apilan */
+@media(max-width:374px){
+  .badges{flex-wrap:wrap}
+  .badges li{flex:1 1 100%}
+}
 .note{font-family:var(--fm); font-size:var(--t-label); letter-spacing:.06em;
   color:var(--muted); margin:var(--sm) 0 0}
 
@@ -216,29 +238,20 @@ h1{
   .board .cell:first-child{padding-left:0}
   .board .cell:nth-child(n+2){border-left:1px solid var(--hair)}
 }
-/* la primera cifra es el dato que vende el producto; las otras tres la escoltan.
-   El orden del DOM no se toca: la jerarquía es de la retícula y del tamaño.
-   En móvil la protagonista ocupa la fila entera y las tres se reparten la de
-   abajo, así que las líneas de separación cambian de sitio respecto al 2x2. */
+/* la primera cifra es el dato que vende el producto; la segunda la escolta. El
+   orden del DOM no se toca: la jerarquía es de la retícula y del tamaño. Eran
+   cuatro celdas hasta el 29-jul-2026; con dos, la retícula base de 2 columnas
+   ya sirve y el escalonado móvil que repartía las tres de abajo sobra. */
 .board--hero .cell:first-child dt{font-size:clamp(2.25rem,7vw,3.5rem); color:var(--orange)}
-@media(max-width:767px){
-  .board--hero .board-in{grid-template-columns:repeat(6,1fr)}
-  .board--hero .cell:first-child{grid-column:span 6}
-  .board--hero .cell:nth-child(n+2){grid-column:span 2;
-    border-top:1px solid var(--hair); padding-top:var(--md)}
-  .board--hero .cell:nth-child(2){border-left:0; padding-left:0}
-  .board--hero .cell:nth-child(2)::before{display:none}
-  .board--hero .cell:nth-child(n+3){border-left:1px solid var(--hair); padding-left:var(--sm)}
-}
 @media(min-width:768px){
-  .board--hero .board-in{grid-template-columns:1.5fr 1fr 1fr 1fr}
+  .board--hero .board-in{grid-template-columns:1.5fr 1fr}
 }
 .board dt{
   font-family:var(--fm); font-weight:500; font-variant-numeric:tabular-nums;
   font-size:clamp(1.375rem,3.4vw,2rem); line-height:1; color:var(--txt);
 }
 .board dd{
-  margin:10px 0 0; font-family:var(--fm); font-size:var(--t-label-sm); letter-spacing:var(--tr-label-sm);
+  margin:10px 0 0; font-family:var(--fz); font-size:var(--t-label-sm); letter-spacing:var(--tr-label-sm);
   text-transform:uppercase; color:var(--muted-2); line-height:1.4;
 }
 
@@ -271,7 +284,7 @@ h3{font-family:var(--fd); font-weight:500; margin:0; text-wrap:balance}
   content:counter(paso,decimal-leading-zero);
   position:absolute; left:0; top:0; transform:translateX(-50%);
   background:var(--ink-800); color:var(--orange);
-  font-family:var(--fm); font-size:var(--t-label); font-weight:500; letter-spacing:.06em;
+  font-family:var(--fz); font-size:var(--t-label); font-weight:500; letter-spacing:.06em;
   padding-block:2px;
 }
 .steps h3{font-size:var(--t-subhead); line-height:1.12; letter-spacing:var(--tr-subhead)}
@@ -309,33 +322,6 @@ h3{font-family:var(--fd); font-weight:500; margin:0; text-wrap:balance}
 .card h3{font-size:var(--t-subhead-sm); line-height:1.18; letter-spacing:var(--tr-subhead); margin-top:var(--md)}
 .card p{color:var(--muted); font-size:var(--t-body-sm); font-weight:400; line-height:1.5;
   margin:var(--xs) 0 0}
-
-/* concesionarios y ciudades */
-.dealers{
-  display:grid; grid-template-columns:1fr; margin:0; padding:0; list-style:none;
-  border:1px solid var(--hair); border-radius:var(--r-md); overflow:hidden;
-}
-@media(min-width:768px){ .dealers{grid-template-columns:repeat(3,1fr)} }
-.dealers .cell{padding:var(--md); border-top:1px solid var(--hair)}
-.dealers .cell:first-child{border-top:0}
-@media(min-width:768px){
-  .dealers .cell{border-top:0; border-left:1px solid var(--hair); padding:var(--lg) var(--md)}
-  .dealers .cell:first-child{border-left:0}
-}
-.dealers .fig{
-  display:block; font-family:var(--fm); font-weight:500; font-size:var(--t-metric);
-  font-variant-numeric:tabular-nums; line-height:1; color:var(--txt);
-}
-.dealers b{display:block; margin-top:12px; font-family:var(--fd); font-weight:500;
-  font-size:var(--t-subhead-sm); color:var(--txt)}
-.dealers .lbl{display:block; margin-top:4px; font-family:var(--fm);
-  font-size:var(--t-label-sm); letter-spacing:.12em; text-transform:uppercase;
-  color:var(--muted-2)}
-.cities{display:flex; flex-wrap:wrap; gap:var(--xs); margin:var(--lg) 0 0; padding:0; list-style:none}
-.cities li{
-  background:var(--ink-700); border-radius:var(--r-pill); padding:10px 18px;
-  font-family:var(--fm); font-size:var(--t-label); letter-spacing:.06em; color:var(--muted);
-}
 
 /* preguntas */
 .faq{margin-top:var(--lg); border-top:1px solid var(--hair)}
@@ -385,6 +371,9 @@ h3{font-family:var(--fd); font-weight:500; margin:0; text-wrap:balance}
    rellena los huecos entre letras y la marca se vuelve una mancha ilegible.
    Esta copia lleva los glifos en blanco, el contorno en transparente y el
    asterisco en oscuro, como en el logo original. */
+/* El wordmark dentro de un titular: RUEDDA nunca se escribe como texto en un
+   header, es regla de marca. Esta medida sirve en cualquier h2. */
+.sec-head h2 .wm{height:1.04em; vertical-align:-.14em}
 .cta h2 .wm{height:1.04em; vertical-align:-.14em;
   background-image:url("data:image/png;base64,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")}
 .cta p{color:var(--ink-900); margin:var(--md) 0 0; max-width:46ch}
@@ -399,7 +388,7 @@ h3{font-family:var(--fd); font-weight:500; margin:0; text-wrap:balance}
 .site-foot .wm{height:30px}
 .foot-grid{display:grid; gap:var(--lg); margin-top:var(--lg)}
 @media(min-width:768px){ .foot-grid{grid-template-columns:repeat(3,1fr)} }
-.foot-grid h3{font-family:var(--fm); font-size:var(--t-label-sm); letter-spacing:.12em;
+.foot-grid h3{font-family:var(--fz); font-size:var(--t-label-sm); letter-spacing:.12em;
   text-transform:uppercase; color:var(--muted-2); font-weight:500; margin-bottom:var(--sm)}
 .foot-grid ul{margin:0; padding:0; list-style:none}
 .foot-grid li{margin-bottom:var(--xs); color:var(--muted)}
@@ -479,7 +468,7 @@ h3{font-family:var(--fd); font-weight:500; margin:0; text-wrap:balance}
 @media (prefers-contrast: more){
   .site-head{background:var(--ink-900); backdrop-filter:none; border-bottom:1px solid var(--txt)}
   .dock{background:var(--ink-900); backdrop-filter:none; border-top:1px solid var(--txt)}
-  .card, .req, .dealers{border:1px solid var(--muted)}
+  .card, .req{border:1px solid var(--muted)}
   .badge{border-color:var(--muted)}
 }
 
@@ -540,7 +529,7 @@ body{padding-bottom:76px}
 }
 @media (prefers-reduced-motion: reduce){ .js .dock{transition:none} }
 .dock dt{font-family:var(--fm); font-size:var(--t-label); color:var(--txt); line-height:1.1}
-.dock dd{margin:2px 0 0; font-family:var(--fm); font-size:var(--t-label-sm);
+.dock dd{margin:2px 0 0; font-family:var(--fz); font-size:var(--t-label-sm);
   letter-spacing:.1em; text-transform:uppercase; color:var(--muted-2)}
 .dock-cta{
   flex:none; background:var(--orange); color:var(--ink-900); text-decoration:none;
@@ -574,8 +563,7 @@ body{padding-bottom:76px}
 <main id="contenido" tabindex="-1">
   <section class="hero">
     <div class="wrap hero-grid">
-      <p class="eyebrow">Movilidad a tu Alcance</p>
-      <h1>Tu moto de trabajo, sin banco.</h1>
+      <h1>Movilidad a tu Alcance</h1>
       <p class="lead">Aplica desde la app, te responden en menos de un minuto y retiras tu moto el mismo día.</p>
       <div class="actions">
         <ul class="badges">
@@ -601,9 +589,10 @@ body{padding-bottom:76px}
   <section class="board board--hero" aria-label="RUEDDA en cifras">
     <div class="wrap board-in">
       <dl>
+        <!-- Las cifras de cobertura (10 sucursales, 6 ciudades) salieron el
+             29-jul-2026: el cliente no quiere anunciar alcance geográfico
+             antes de lanzar. Ver CONTENT.md. -->
         <div class="cell"><dt>&lt; 1 min</dt><dd>en responder tu solicitud</dd></div>
-        <div class="cell"><dt>10</dt><dd>sucursales de concesionarios aliados</dd></div>
-        <div class="cell"><dt>6</dt><dd>ciudades cubiertas</dd></div>
         <div class="cell"><dt>Seguro</dt><dd>incluido mientras dure tu contrato</dd></div>
       </dl>
     </div>
@@ -662,7 +651,7 @@ body{padding-bottom:76px}
   </section>
 
   <section class="wrap sec">
-    <div class="sec-head"><h2>Por qué RUEDDA</h2></div>
+    <div class="sec-head"><h2>Por qué <span class="wm" role="img" aria-label="RUEDDA"></span></h2></div>
     <ul class="cards">
       <li><article class="card">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg>
@@ -712,16 +701,9 @@ body{padding-bottom:76px}
         <p>RUEDDA no tiene tienda física. Aplicas desde la app y retiras tu moto en el
            concesionario aliado que prefieras.</p>
       </div>
-      <ul class="board dealers">
-        <!-- TODO cliente: logos de los tres concesionarios; hoy manda la cifra -->
-        <li class="cell"><span class="fig">7</span><b>ESCUDA</b><span class="lbl">sucursales</span></li>
-        <li class="cell"><span class="fig">2</span><b>Empire Keeway</b><span class="lbl">sucursales</span></li>
-        <li class="cell"><span class="fig">1</span><b>Veloz</b><span class="lbl">sucursal</span></li>
-      </ul>
-      <ul class="cities" aria-label="Ciudades cubiertas">
-        <li>Caracas</li><li>La Guaira</li><li>Los Teques</li>
-        <li>La Victoria</li><li>Maracay</li><li>Valencia</li>
-      </ul>
+      <!-- Los tres concesionarios con sus conteos y las seis ciudades salieron
+           el 29-jul-2026 por el mismo motivo que las cifras de la pizarra. Queda
+           el encuadre que el propio cliente propuso: se aplica desde la app. -->
       <div class="actions">
       <ul class="badges">
           <li>
