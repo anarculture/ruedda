@@ -285,7 +285,12 @@ h3{font-family:var(--fd); font-weight:500; margin:0; text-wrap:balance}
   font-size:var(--t-lead); line-height:1.35}
 
 /* pasos: un riel vertical continuo */
-.steps{list-style:none; margin:0; padding:0; counter-reset:paso}
+/* El `margin:0` de aquí y el de .cards existían para matar el margen que el
+   navegador le pone a ol/ul, pero de paso aplastaban el `.sec-head + *` de
+   arriba y dejaban el título pegado al primer paso, sin un pixel. El cliente
+   lo fotografió el 30-jul: "lo veo muy pegado el título a la explicación".
+   Se resetean solo los lados que hacía falta resetear. */
+.steps{list-style:none; margin:var(--xl) 0 0; padding:0; counter-reset:paso}
 .steps li{
   position:relative; counter-increment:paso;
   padding:0 0 var(--xl) var(--lg); border-left:1px solid rgba(232,99,42,.32);
@@ -313,7 +318,7 @@ h3{font-family:var(--fd); font-weight:500; margin:0; text-wrap:balance}
 @media(min-width:900px){ .split{grid-template-columns:1.15fr .85fr; gap:var(--xxl); align-items:start} }
 
 /* tarjetas de diferenciador */
-.cards{display:grid; gap:var(--md); grid-template-columns:1fr; margin:0; padding:0; list-style:none}
+.cards{display:grid; gap:var(--md); grid-template-columns:1fr; margin:var(--xl) 0 0; padding:0; list-style:none}
 @media(min-width:640px){ .cards{grid-template-columns:repeat(2,1fr)} }
 @media(min-width:1024px){
   .cards{grid-template-columns:repeat(3,1fr)}
@@ -368,10 +373,32 @@ h3{font-family:var(--fd); font-weight:500; margin:0; text-wrap:balance}
 /* cierre */
 .cta{position:relative; overflow:hidden; background:var(--orange); color:var(--ink-900);
   border-radius:var(--r-lg); padding:var(--xl) var(--md); margin-block:var(--xl)}
-.cta > *{position:relative; z-index:1}
+/* Esto era `.cta > *`, y arrollaba a todo hijo que quisiera posicionarse solo:
+   el asterisco volvía al flujo y, como trae aspect-ratio, metía un bloque de
+   ~420px de alto vacío encima del titular. Nombrar al único hijo que de verdad
+   necesita ir por encima del fondo cierra esa clase de error. */
+.cta-main{position:relative; z-index:1}
 .aster-cta{right:-14%; top:auto; bottom:-38%; width:min(56vw,380px); opacity:.16; z-index:0}
 @media(min-width:900px){ .aster-cta{right:2%; bottom:-42%; width:min(34vw,420px); opacity:.18} }
 @media(min-width:768px){ .cta{padding:var(--xxl) var(--xl)} }
+/* El QR es de escritorio y nada más: en un monitor los badges de tienda no se
+   pueden tocar, y en un teléfono el aparato ya está en la mano. Por debajo de
+   900px no se dibuja, así que la banda queda exactamente como estaba.
+   Va absoluto, no en columna de grid: en columna el titular pierde ancho y
+   "Descarga RUEDDA y aplica hoy" se parte en tres líneas con la "y" huérfana.
+   Abajo a la derecha cae en el hueco que dejan el párrafo y los badges, que
+   son cortos, así que nunca se tocan. */
+.cta-qr{display:none}
+@media(min-width:900px){
+  /* el asterisco se muda al borde izquierdo: la esquina derecha es del QR */
+  .aster-cta{right:auto; left:-16%; bottom:-54%; opacity:.12}
+  .cta-qr{display:block; position:absolute; z-index:1; width:180px;
+          right:var(--xl); bottom:var(--xxl); text-align:center}
+  .cta-qr .cuadro{background:#fff; border-radius:var(--r-md); padding:var(--sm)}
+  .cta-qr svg{display:block; width:100%; height:auto; color:var(--ink-900)}
+  .cta-qr p{margin:var(--sm) 0 0; font-size:var(--t-label); line-height:1.35;
+            color:var(--ink-900); max-width:none}
+}
 /* la banda es el único bloque naranja y el segundo momento display de la
    página, junto al del problema: va a escala de titular, no de subtítulo */
 .cta h2{color:#fff; max-width:15ch;
@@ -388,7 +415,11 @@ h3{font-family:var(--fd); font-weight:500; margin:0; text-wrap:balance}
 /* el PNG del wordmark trae aire propio a la derecha: sin esto el signo de
    cierre queda flotando a media palabra de distancia */
 .qm{margin-left:-.22em}
-.cta h2 .wm{height:1.04em; vertical-align:-.14em;
+/* Antes el wordmark cerraba la primera línea y el aire del PNG se perdía en el
+   margen. Desde el 30-jul va en medio de "y ___ hoy!", con palabras cortas a
+   los dos lados, y ese aire se lee como dos espacios de más. Mismo remedio que
+   .qm, aplicado a ambos costados. */
+.cta h2 .wm{margin:0 -.34em; height:1.04em; vertical-align:-.14em;
   background-image:url("data:image/png;base64,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")}
 .cta p{color:var(--ink-900); margin:var(--md) 0 0; max-width:46ch}
 .cta .badge{background:var(--ink-900); border-color:transparent}
@@ -568,7 +599,7 @@ body{padding-bottom:76px}
   </a>
   <nav class="nav" aria-label="Secciones">
     <a href="#como-funciona">Cómo funciona</a>
-    <a href="#donde">Dónde estamos</a>
+    <a href="#donde">Dónde nos encuentras</a>
     <a href="#preguntas">Preguntas</a>
   </nav>
   </div>
@@ -761,7 +792,11 @@ body{padding-bottom:76px}
     <div class="cta">
       <span class="aster aster-cta" aria-hidden="true"></span>
 
-      <h2>Descarga <span class="wm" role="img" aria-label="RUEDDA"></span> y aplica hoy</h2>
+      <div class="cta-main">
+      <!-- Titular del cliente, 30-jul 16:00, textual. "RUEDDA" va de verbo, no
+           de sujeto, y por eso el wordmark queda al final. Escribió el cierre
+           de exclamación sin el de apertura: se respeta su texto. -->
+      <h2>Descarga la App y <span class="wm" role="img" aria-label="RUEDDA"></span> hoy!</h2>
       <p>Respuesta en menos de un minuto. Retiras tu moto en el concesionario aliado que prefieras.</p>
       <ul class="badges">
         <li>
@@ -780,6 +815,20 @@ body{padding-bottom:76px}
         </li>
       </ul>
       <p class="note">Gratis. Toda la solicitud se hace en la app.</p>
+      </div>
+
+      <!-- El puente de escritorio a teléfono. En un monitor los dos badges de
+           tienda no se pueden tocar, así que el visitante que decide acá se
+           queda sin gesto: el QR le pone la página en la mano. Solo se dibuja
+           de 900px para arriba; en móvil el teléfono ya lo tiene encima.
+           El path se hornea con scripts/genqr.py — la página no trae librería
+           de QR, trae el resultado.
+           TODO cliente: cuando la app se publique, esto apunta al enlace
+           inteligente de tienda, y antes de eso a somosruedda.com. -->
+      <aside class="cta-qr" data-placeholder="qr-destino">
+        <div class="cuadro"><svg viewBox="0 0 29 29" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M0 0h7v1h-7zM11 0h1v1h-1zM13 0h4v1h-4zM19 0h1v1h-1zM22 0h7v1h-7zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h3v1h-3zM12 1h1v1h-1zM14 1h7v1h-7zM22 1h1v1h-1zM28 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM11 2h1v1h-1zM16 2h1v1h-1zM18 2h1v1h-1zM20 2h1v1h-1zM22 2h1v1h-1zM24 2h3v1h-3zM28 2h1v1h-1zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM9 3h1v1h-1zM11 3h3v1h-3zM15 3h1v1h-1zM18 3h1v1h-1zM22 3h1v1h-1zM24 3h3v1h-3zM28 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM8 4h3v1h-3zM14 4h2v1h-2zM17 4h3v1h-3zM22 4h1v1h-1zM24 4h3v1h-3zM28 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM10 5h2v1h-2zM13 5h1v1h-1zM15 5h1v1h-1zM17 5h1v1h-1zM19 5h2v1h-2zM22 5h1v1h-1zM28 5h1v1h-1zM0 6h7v1h-7zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h7v1h-7zM11 7h1v1h-1zM13 7h1v1h-1zM15 7h3v1h-3zM20 7h1v1h-1zM0 8h1v1h-1zM2 8h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM9 8h1v1h-1zM11 8h2v1h-2zM14 8h1v1h-1zM16 8h2v1h-2zM20 8h1v1h-1zM24 8h1v1h-1zM27 8h1v1h-1zM1 9h2v1h-2zM4 9h1v1h-1zM7 9h1v1h-1zM16 9h3v1h-3zM20 9h3v1h-3zM25 9h1v1h-1zM28 9h1v1h-1zM5 10h2v1h-2zM8 10h2v1h-2zM12 10h2v1h-2zM16 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM26 10h3v1h-3zM0 11h1v1h-1zM2 11h3v1h-3zM7 11h2v1h-2zM10 11h1v1h-1zM12 11h1v1h-1zM15 11h4v1h-4zM20 11h1v1h-1zM22 11h2v1h-2zM27 11h1v1h-1zM0 12h1v1h-1zM3 12h4v1h-4zM12 12h1v1h-1zM16 12h2v1h-2zM19 12h5v1h-5zM25 12h1v1h-1zM27 12h2v1h-2zM1 13h3v1h-3zM13 13h1v1h-1zM16 13h2v1h-2zM22 13h1v1h-1zM25 13h1v1h-1zM28 13h1v1h-1zM0 14h1v1h-1zM2 14h1v1h-1zM6 14h3v1h-3zM10 14h3v1h-3zM14 14h1v1h-1zM17 14h2v1h-2zM21 14h5v1h-5zM27 14h2v1h-2zM1 15h1v1h-1zM3 15h2v1h-2zM7 15h2v1h-2zM10 15h8v1h-8zM19 15h2v1h-2zM23 15h1v1h-1zM25 15h1v1h-1zM27 15h1v1h-1zM0 16h1v1h-1zM3 16h1v1h-1zM5 16h4v1h-4zM12 16h1v1h-1zM14 16h1v1h-1zM16 16h3v1h-3zM20 16h3v1h-3zM25 16h1v1h-1zM27 16h2v1h-2zM3 17h2v1h-2zM7 17h1v1h-1zM9 17h1v1h-1zM12 17h1v1h-1zM14 17h1v1h-1zM16 17h1v1h-1zM20 17h3v1h-3zM25 17h2v1h-2zM28 17h1v1h-1zM0 18h1v1h-1zM2 18h1v1h-1zM6 18h2v1h-2zM9 18h2v1h-2zM13 18h1v1h-1zM17 18h1v1h-1zM20 18h2v1h-2zM27 18h2v1h-2zM1 19h2v1h-2zM9 19h1v1h-1zM12 19h1v1h-1zM15 19h3v1h-3zM21 19h1v1h-1zM24 19h2v1h-2zM27 19h1v1h-1zM0 20h1v1h-1zM6 20h2v1h-2zM9 20h1v1h-1zM11 20h1v1h-1zM17 20h1v1h-1zM20 20h5v1h-5zM8 21h1v1h-1zM12 21h2v1h-2zM16 21h1v1h-1zM20 21h1v1h-1zM24 21h1v1h-1zM26 21h3v1h-3zM0 22h7v1h-7zM11 22h2v1h-2zM14 22h1v1h-1zM16 22h1v1h-1zM18 22h3v1h-3zM22 22h1v1h-1zM24 22h2v1h-2zM27 22h2v1h-2zM0 23h1v1h-1zM6 23h1v1h-1zM9 23h2v1h-2zM12 23h3v1h-3zM17 23h2v1h-2zM20 23h1v1h-1zM24 23h2v1h-2zM0 24h1v1h-1zM2 24h3v1h-3zM6 24h1v1h-1zM8 24h1v1h-1zM11 24h2v1h-2zM14 24h1v1h-1zM17 24h1v1h-1zM20 24h5v1h-5zM27 24h2v1h-2zM0 25h1v1h-1zM2 25h3v1h-3zM6 25h1v1h-1zM10 25h2v1h-2zM14 25h1v1h-1zM16 25h1v1h-1zM23 25h2v1h-2zM26 25h3v1h-3zM0 26h1v1h-1zM2 26h3v1h-3zM6 26h1v1h-1zM8 26h2v1h-2zM14 26h1v1h-1zM17 26h1v1h-1zM19 26h3v1h-3zM23 26h3v1h-3zM28 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM9 27h1v1h-1zM13 27h1v1h-1zM16 27h3v1h-3zM20 27h1v1h-1zM27 27h1v1h-1zM0 28h7v1h-7zM8 28h1v1h-1zM12 28h1v1h-1zM15 28h6v1h-6zM22 28h1v1h-1zM24 28h1v1h-1zM27 28h2v1h-2z"/></svg></div>
+        <p>Apúntale con la cámara del teléfono.</p>
+      </aside>
     </div>
   </section>
 </main>
