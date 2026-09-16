@@ -12,5 +12,3 @@
 !assets/
 !assets/*.webp
 !assets/*.png
-!assets/fonts/
-!assets/fonts/*.woff2
