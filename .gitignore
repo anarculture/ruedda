@@ -8,3 +8,9 @@
 # el deck de inversionistas, en su propia ruta
 !pitch-deck/
 !pitch-deck/index.html
+# ilustraciones y marca del landing, heredadas del app (ruedda-platform/frontend/assets/images)
+!assets/
+!assets/*.webp
+!assets/*.png
+!assets/fonts/
+!assets/fonts/*.woff2
