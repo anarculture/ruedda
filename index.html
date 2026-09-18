@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RUEDDA · Movilidad a tu Alcance</title>
+<title>RUEDDA · Movilidad a tu alcance</title>
 <meta name="description" content="Arrienda tu moto desde la app RUEDDA. Respuesta en menos de un minuto, seguro incluido y cánones en Bs a tasa BCV.">
 
 <!-- Vista previa al compartir. Este link se pega en WhatsApp, no se busca en
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_VE">
 <meta property="og:site_name" content="RUEDDA">
-<meta property="og:title" content="RUEDDA · Movilidad a tu Alcance">
+<meta property="og:title" content="RUEDDA · Movilidad a tu alcance">
 <meta property="og:description" content="Aplica desde la app, te respondemos en menos de un minuto y retiras tu moto el mismo día.">
 <meta property="og:url" content="https://anarculture.github.io/ruedda/">
 <meta property="og:image" content="https://anarculture.github.io/ruedda/og.png">
@@ -148,22 +148,10 @@ ul,ol{margin:0; padding:0; list-style:none}
 .hero h1{font-size:var(--t-display); line-height:1; letter-spacing:-.025em}
 .hero .lead{color:var(--ink-soft); font-size:var(--t-lead); max-width:44ch}
 .hero .badges{margin-top:var(--xs)}
-/* la ilustración del intro de la app (intro-1-moto) sobre el asterisco sticker
-   del login, que rueda con el scroll */
+/* la ilustración del intro de la app (intro-1-moto) */
 .hero-art{position:relative; aspect-ratio:1100/1278; max-width:400px; margin-inline:auto; width:100%}
 @media(min-width:900px){ .hero-art{max-width:440px; margin-inline:0} }
-.hero-art img{position:relative; z-index:1; width:100%}
-/* El asterisco sticker del login de la app, calcado a vector de
-   login-asterisk-icon.png (el arte grande del splash viene recortado por el
-   borde del teléfono y no admite giro). Entero, gira sobre su centro con el
-   scroll: la empresa se llama RUEDDA. */
-.aster-fondo{
-  position:absolute; z-index:0; pointer-events:none; user-select:none;
-  right:-4%; top:2%; width:46%; height:auto; opacity:.9;
-  transform:rotate(0); transform-origin:50% 50%;
-}
-.aster-fondo path{fill:var(--primary); stroke:#fff; stroke-width:11; stroke-linejoin:round; paint-order:stroke}
-@media(min-width:900px){ .aster-fondo{right:-24%; top:4%; width:54%} }
+.hero-art img{width:100%}
 
 /* ---------- pizarra: prueba en cuatro celdas ---------- */
 .board{background:var(--inset); border-block:1px solid var(--line)}
@@ -328,7 +316,7 @@ ul,ol{margin:0; padding:0; list-style:none}
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <h1>Movilidad a tu Alcance</h1>
+        <h1>Movilidad a tu alcance</h1>
         <p class="lead">Aplica desde la app, te respondemos en menos de un minuto y retiras tu moto el mismo día.</p>
         <ul class="badges">
           <li><a class="badge" href="https://apps.apple.com/us/app/ruedda/id6788202594" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.3.8-.7 0-1.7-.8-2.8-.8-1.5 0-2.8.9-3.6 2.2-1.5 2.6-.4 6.5 1.1 8.6.7 1 1.6 2.2 2.7 2.1 1.1 0 1.5-.7 2.8-.7s1.7.7 2.8.7c1.2 0 1.9-1 2.6-2.1.8-1.2 1.2-2.4 1.2-2.4s-2.2-.9-2.2-3.3zM14.3 6.2c.6-.7 1-1.7.9-2.7-.9 0-2 .6-2.6 1.3-.6.6-1.1 1.7-.9 2.6 1 .1 2-.5 2.6-1.2z"/></svg><span class="txt"><span>Descárgala en</span><b>App Store</b></span></a></li>
@@ -336,7 +324,6 @@ ul,ol{margin:0; padding:0; list-style:none}
         </ul>
       </div>
       <div class="hero-art">
-        <svg class="aster-fondo" viewBox="-8 -8 133 136" aria-hidden="true" focusable="false"><path d="M39.8 105.1C38.0 104.5 29.5 98.5 26.5 95.8C24.7 94.2 24.1 91.9 24.9 89.8C25.3 88.9 25.6 88.5 29.0 84.1C30.0 82.7 31.3 81.0 31.8 80.2C32.3 79.5 33.1 78.4 33.6 77.7C39.0 70.2 38.9 70.3 36.4 69.8C34.7 69.4 31.9 68.6 30.6 68.2C30.1 67.9 29.4 67.8 29.1 67.8C28.9 67.7 28.4 67.6 28.1 67.4C27.9 67.2 27.5 67.0 27.3 67.0C27.1 67.0 26.3 66.7 25.5 66.4C24.8 66.0 23.6 65.5 23.0 65.2C22.4 64.9 21.7 64.6 21.5 64.5C21.3 64.4 20.8 64.1 20.5 64.0C20.2 63.9 19.7 63.6 19.5 63.5C19.3 63.4 18.8 63.1 18.3 62.9C14.9 61.4 13.6 56.4 15.6 52.9C15.8 52.6 16.0 51.9 16.1 51.4C16.2 50.8 16.4 50.1 16.6 49.8C16.8 49.4 17.0 48.7 17.1 48.1C17.2 47.6 17.4 47.0 17.6 46.8C17.7 46.7 17.9 45.9 18.1 45.2C19.4 40.3 21.5 38.9 25.1 40.5C25.8 40.8 26.4 41.0 26.6 41.0C26.7 41.0 27.3 41.2 27.9 41.5C29.2 42.1 31.1 42.7 32.8 43.1C33.5 43.3 34.4 43.5 34.6 43.7C34.9 43.8 35.7 44.0 36.5 44.1C37.2 44.2 38.2 44.4 38.6 44.6C39.0 44.8 40.0 45.0 40.9 45.1C41.7 45.2 42.9 45.4 43.6 45.6C46.1 46.4 46.0 46.7 45.7 33.7C45.3 18.7 45.7 17.8 52.0 17.1C53.0 17.0 54.3 16.8 54.8 16.6C55.3 16.4 56.5 16.2 57.4 16.1C58.3 16.0 59.4 15.8 59.8 15.7C60.4 15.5 64.2 14.8 66.2 14.6C67.6 14.5 68.8 15.0 69.6 16.1C70.1 16.7 70.1 17.3 70.4 28.8C70.7 42.4 70.6 41.9 72.7 40.8C74.5 39.9 75.9 39.3 76.8 39.0C77.3 38.8 77.8 38.6 77.9 38.5C77.9 38.4 78.4 38.2 78.9 38.1C79.5 38.0 80.1 37.8 80.4 37.6C80.7 37.4 81.4 37.2 81.9 37.0C83.2 36.7 85.2 36.0 86.2 35.6C86.6 35.4 87.6 35.2 88.3 35.1C89.0 35.0 89.9 34.8 90.3 34.6C93.3 33.1 97.2 35.5 97.9 39.3C98.0 39.9 98.2 40.6 98.3 40.9C98.5 41.1 98.7 42.0 98.9 42.8C99.2 44.0 99.7 45.7 100.3 47.4C100.4 47.8 100.7 48.7 100.9 49.5C101.1 50.3 101.4 51.4 101.6 52.0C103.6 58.3 103.1 58.8 93.4 60.0C91.6 60.2 88.7 60.8 87.4 61.3C87.0 61.4 86.1 61.7 85.5 61.8C84.9 61.9 84.0 62.2 83.6 62.4C82.7 62.8 80.3 63.6 79.6 63.9C78.7 64.1 78.9 64.6 81.3 67.7C84.9 72.2 86.7 74.7 89.4 78.5C90.0 79.4 91.0 80.7 91.5 81.5C95.2 86.6 94.8 87.7 87.5 92.4C86.9 92.8 84.8 94.4 82.9 95.9C75.6 101.7 75.7 101.7 68.1 92.6C67.5 91.8 66.7 91.0 66.5 90.7C66.0 90.3 63.9 87.8 62.6 86.3C58.5 81.3 59.5 80.9 53.3 90.6C52.4 92.0 50.8 94.5 49.8 96.1C48.8 97.6 47.9 99.0 47.8 99.2C47.7 99.6 45.8 102.4 44.8 103.7C43.6 105.2 41.6 105.8 39.8 105.1Z"/></svg>
         <img data-par=".12" src="assets/intro-1-moto.webp" alt="Un motorizado con casco naranja rodando en su moto." width="1100" height="1278" fetchpriority="high">
       </div>
     </div>
@@ -482,7 +469,7 @@ ul,ol{margin:0; padding:0; list-style:none}
   </div>
   <p class="legal">
     <span>© 2026 RUEDDA. Todos los derechos reservados.</span>
-    <span>Movilidad a tu Alcance</span>
+    <span>Movilidad a tu alcance</span>
   </p>
 </div></footer>
 
@@ -551,20 +538,7 @@ ul,ol{margin:0; padding:0; list-style:none}
 
   if (quieto) return;   // el resto es gesto; la página ya está completa sin él
 
-  // 4. El asterisco rueda con el scroll: la empresa se llama RUEDDA y girar con
-  //    el dedo dice el nombre. Solo escribe transform.
-  const fondo = document.querySelector('.aster-fondo');
-  if (fondo) {
-    const girar = () => {
-      const recorrido = document.documentElement.scrollHeight - innerHeight;
-      const p = recorrido > 0 ? Math.min(scrollY / recorrido, 1) : 0;
-      fondo.style.transform = `rotate(${(360 * p).toFixed(1)}deg)`;
-    };
-    addEventListener('scroll', girar, { passive: true });
-    girar();
-  }
-
-  // 5. Las ilustraciones suben un poco más rápido que la página (parallax):
+  // 4. Las ilustraciones suben un poco más rápido que la página (parallax):
   //    desde que entran por abajo, -k px por cada px de scroll. Escriben
   //    `translate`, que no pisa el `transform` de las entradas ni la flotación.
   const capas = [...document.querySelectorAll('[data-par]')];
