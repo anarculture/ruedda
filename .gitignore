@@ -3,6 +3,8 @@
 !.gitignore
 # la home: el landing publico
 !index.html
+# el dominio propio, lo lee GitHub Pages
+!CNAME
 # imagen de vista previa al compartir el link
 !og.png
 # el deck de inversionistas, en su propia ruta
