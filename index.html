@@ -40,8 +40,8 @@
    es una extensión de la app: mismo navy, mismo naranja, mismas familias,
    mismos radios y sombras. Si un valor cambia allá, cambia acá.
    Backend del formulario de #concesionarios: el action del <form> es
-   https://ruedda-dev.onrender.com/v1/dealer-leads (Dev, para probar antes de
-   producción). En el commit de entrega pasa a https://api.somosruedda.com/v1/dealer-leads.
+   https://api.somosruedda.com/v1/dealer-leads (producción). Para probar contra Dev,
+   cambiarlo a https://ruedda-dev.onrender.com/v1/dealer-leads sin commitear.
    Es la única URL del backend en la página; un atributo HTML no lee variables CSS. */
 :root{
   --page:#18222C; --surface:#2A3845; --surface2:#354654; --inset:#1C2733;
@@ -429,7 +429,7 @@ ul,ol{margin:0; padding:0; list-style:none}
     <div class="alta-caja">
       <p id="solicitud-enviada" class="aviso card" role="status">Recibimos tu solicitud. Te vamos a contactar para validar tus datos.</p>
       <p id="solicitud-error" class="aviso card" role="alert">No pudimos enviar tu solicitud. Revisa los datos y vuelve a intentarlo.</p>
-      <form class="alta card rise" method="post" action="https://ruedda-dev.onrender.com/v1/dealer-leads" enctype="application/x-www-form-urlencoded" accept-charset="utf-8">
+      <form class="alta card rise" method="post" action="https://api.somosruedda.com/v1/dealer-leads" enctype="application/x-www-form-urlencoded" accept-charset="utf-8">
         <label>Razón social<input name="legalName" required maxlength="200" autocomplete="organization"></label>
         <label>RIF<input name="rif" required pattern="[VEJPGvejpg]-?[0-9]{8}-?[0-9]" placeholder="J-12345678-9" autocapitalize="characters"></label>
         <label>Nombre comercial<input name="name" required maxlength="200"></label>
